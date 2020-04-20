@@ -30,7 +30,10 @@ export default class LoadMore extends React.Component {
 			},100)
 		}
 	}
-	
+	//组件卸载，需要重置state
+	componentWillUnmount(){
+		window.onscroll=null
+	}
     render() {
         return (
             <div ref={this.load}>
