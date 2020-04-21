@@ -30,7 +30,7 @@ export default class LoadMore extends React.Component {
 			},100)
 		}
 	}
-	//组件卸载，需要重置state
+	//组件卸载，取消监听事件
 	componentWillUnmount(){
 		window.onscroll=null
 	}

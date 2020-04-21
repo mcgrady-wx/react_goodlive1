@@ -21,7 +21,7 @@ class SearchInput extends React.Component {
         /**
          * 回车判断
          */
-        if(event.keyCode == 13){
+        if(event.keyCode === 13){
             // 动态路由跳转
             this.props.history.push("/search/"+this.state.values);
         }
