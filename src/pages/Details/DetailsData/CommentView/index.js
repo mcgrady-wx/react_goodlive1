@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from './Item'
+import CommentLoadMore from '../../../../components/LoadMore'
 import './style.less'
 
 export default class CommentView extends React.Component {
@@ -13,6 +14,7 @@ export default class CommentView extends React.Component {
                 {data.map((item, index) => {
                     return <Item key={index} data={item}/>
                 })}
+                <CommentLoadMore onLoadMore={this.props.onLoadMore}/>
             </div>
         )
     }

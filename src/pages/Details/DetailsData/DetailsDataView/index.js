@@ -3,6 +3,7 @@ import Swiper from "../../../../components/Swiper"
 import DetailsHeader from "../../../../components/Header"
 import Tabs from "../../../../components/Tabs"
 import CommentView from '../CommentView'
+import StoreBuy from '../StoreBuy'
 import "./style.less"
 
 export default class DetailsView extends React.Component {
@@ -45,9 +46,10 @@ export default class DetailsView extends React.Component {
 		                        <p>年代：{data.info.years}</p>
 		                    </div>
 		                </div>
+		                <StoreBuy id={this.props.id}/>
 	             	</tab>
                 	<tab name="房屋评价">
-                		<CommentView comments={comments}/>
+                		<CommentView comments={comments} onLoadMore={this.props.onLoadMore}/>
                 	</tab>
                 </Tabs>
             </div>

@@ -6,8 +6,8 @@ import base from "./base"
 import { getData } from "../utils/http"
 
 const comment={
-	commentData(id){
-       return getData(base.comment+"?id="+id);
+	commentData(id,page){
+       return getData(base.comment+"?id="+id+"&page="+page);
     }
 }
 

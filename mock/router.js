@@ -40,9 +40,10 @@ router.get("/details",function(req,res){
 })
 // 评价接口
 router.get("/comment",function(req,res){
-	//接收一个参数 商品id
+	//接收两个参数 商品id和页码
     var id = url.parse(req.url, true).query.id;
-    console.log("id:"+id);
+    var page = url.parse(req.url, true).query.page;
+    console.log("id:"+id,"页码：" + page);
     res.send(commentdata)
 })
 module.exports = router;
