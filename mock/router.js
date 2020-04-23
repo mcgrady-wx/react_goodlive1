@@ -6,6 +6,7 @@ var homehot = require("./data/home/hotdata")
 var searchdata = require("./data/search/searchdata")
 var detailsdata = require("./data/details/detailsdata")
 var commentdata = require("./data/comment/commentdata")
+var orderdata = require("./data/order/orderdata")
 
 //首页显示接口
 router.get(config.homehot1,function(req,res){
@@ -45,5 +46,21 @@ router.get("/comment",function(req,res){
     var page = url.parse(req.url, true).query.page;
     console.log("id:"+id,"页码：" + page);
     res.send(commentdata)
+})
+// 购物车数据接口
+router.get("/car",function(req,res){
+	//接受  用户名作为参数
+    var user = url.parse(req.url, true).query.user;
+    console.log("用户:"+user);
+    res.send(orderdata)
+})
+// 获取购物车评价数据接口
+router.post("/ordercomment",function(req,res){
+	
+    var info = req.body.info;
+    console.log("评价:"+info);
+    res.send({
+    	msg:"成功"
+    })
 })
 module.exports = router;
